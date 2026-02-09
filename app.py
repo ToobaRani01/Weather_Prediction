@@ -44,10 +44,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Model Assets
-model = joblib.load("weather_rf_model.pkl")
-scaler = joblib.load("scaler.pkl")
-selected_features = joblib.load("selected_features.pkl")
-encoders = joblib.load("label_encoders.pkl")
+@st.cache_resource
+def load_assets():
+    model = joblib.load("weather_rf_model.pkl")
+    scaler = joblib.load("scaler.pkl")
+    selected_features = joblib.load("selected_features.pkl")
+    encoders = joblib.load("label_encoders.pkl")
+    return model, scaler, selected_features, encoders
+
+model, scaler, selected_features, encoders = load_assets()
 
 # Title
 st.title("🌦️ Weather Type Prediction & Probability")

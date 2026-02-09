@@ -62,7 +62,10 @@ label_ranges = {
     "Temperature": "Temperature (°C) (-10 — 50)",
     "Humidity": "Humidity (%) (0 — 100)",
     "Wind Speed": "Wind Speed (km/h) (0 — 100)",
-    "Pressure": "Pressure (hPa) (950 — 1050)",
+    "Precipitation (%)": "Precipitation (%) (0 — 100)",
+    "Atmospheric Pressure": "Atmospheric Pressure (hPa) (950 — 1050)",
+    "UV Index": "UV Index (0 — 14+)",
+    "Visibility (km)": "Visibility (km) (0 — 20)",
 }
 
 for i in range(0, len(selected_features), 2):
